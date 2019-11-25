@@ -30,7 +30,7 @@ module.exports = {
      * assetsPublicPath: '/app/'
      * 打包出来的静态资源路径是 /app/*.js
      */
-    assetsPublicPath: "/H5-Plaint-1120/", // 相对文件路径
+    assetsPublicPath: '/H5-Plaint-1120/', // 相对文件路径
 
     /**
      * !!! 这个配置只有在本地开发才有意义，
@@ -78,7 +78,7 @@ module.exports = {
     /**
      * !!! 如果是走一体化平台构建的项目请勿改该配置
      */
-    assetsPublicPath:`http://fsp-cdn.vortex.zj.chinamobile.com/H5-Plaint-1120/${version}/`, // 相对文件路径
+    assetsPublicPath: `http://fsp-cdn.vortex.zj.chinamobile.com/H5-Plaint-1120/${version}/`, // 相对文件路径
 
     // 生产环境的souce map
     // https://webpack.js.org/co    // Paths

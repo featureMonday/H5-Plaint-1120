@@ -9,6 +9,13 @@ import App from './App.vue';
 import router from './router';
 import http from './utils/http';
 
+// 这里只能用require引入，不能用import引入
+// const VM = require('vortex-mobile');
+// import VM from 'vortex-mobile';
+// import 'vortex-mobile/lib/index.css';
+
+// Vue.use(VM);
+
 Vue.prototype.$http = http; // 引入前后端交互工具
 
 // 开始创建Vue实例

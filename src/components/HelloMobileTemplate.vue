@@ -1,7 +1,9 @@
 <template>
   <div class="hello">
+    <vm-switch v-model="checked" />
     <img src="../assets/vortex.jpeg">
     <div class="text">{{msg}}</div>
+    <!-- <vm-loading type="spinner" /> -->
     <vm-button tag="a" href="http://vortex.zj.chinamobile.com/components" block size="lg" class="bg-blue button-item">组件库</vm-button>
   </div>
 </template>
@@ -16,6 +18,7 @@ export default {
   data() {
     return {
       msg: 'Welcome to vortex',
+      checked: true,
     };
   },
 };

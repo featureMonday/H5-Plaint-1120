@@ -1,6 +1,6 @@
 'use strict';
 const MODE = process.env.NODE_ENV || 'local';
-const path = require("path");
+const path = require('path');
 const apiMocker = require('webpack-api-mocker');
 const webpack = require('webpack');
 const config = require('../config');
@@ -65,12 +65,12 @@ const localWebpackConfig = merge.smartStrategy({
     rules: [
       {
         test: /\.css$/,
-        use: ["css-hot-loader"] // 使用 MiniCssExtractPlugin 控件 需要 css-hot-loader 做热替换插件
+        use: ['css-hot-loader'], // 使用 MiniCssExtractPlugin 控件 需要 css-hot-loader 做热替换插件
       },
       {
         test: /\.less$/,
         use: ['css-hot-loader'], // 使用 MiniCssExtractPlugin 控件 需要 css-hot-loader 做热替换插件
-      }
+      },
     ],
   },
   optimization: {
@@ -94,8 +94,8 @@ const localWebpackConfig = merge.smartStrategy({
       {
         from: path.resolve(__dirname, '../static'),
         to: config.local.staticAssetsDirectory,
-        ignore: ['.*']
-      }
+        ignore: ['.*'],
+      },
     ]),
     // css 提取
     new MiniCssExtractPlugin({
@@ -113,7 +113,7 @@ module.exports = new Promise((resolve, reject) => {
   portfinder.basePort = process.env.PORT || config.local.port;
   portfinder.getPort((err, port) => {
     if (err) {
-      reject(err)
+      reject(err);
     } else {
       // publish the new Port, necessary for e2e tests
       process.env.PORT = port;
@@ -121,13 +121,19 @@ module.exports = new Promise((resolve, reject) => {
       localWebpackConfig.devServer.port = port;
 
       // Add FriendlyErrorsPlugin
-      localWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
-        compilationSuccessInfo: {
-          messages: [`Your application is running here: http://${localWebpackConfig.devServer.host}:${port}`],
-        }
-      }));
+      localWebpackConfig.plugins.push(
+        new FriendlyErrorsPlugin({
+          compilationSuccessInfo: {
+            messages: [
+              `Your application is running here: http://${
+                localWebpackConfig.devServer.host
+              }:${port}`,
+            ],
+          },
+        }),
+      );
 
-      resolve(localWebpackConfig)
+      resolve(localWebpackConfig);
     }
-  })
+  });
 });

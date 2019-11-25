@@ -23,7 +23,7 @@ const prodWebpackConfig = merge(baseWebpackConfig, {
         parallel: true, // 开启并行压缩，充分利用cpu
         extractComments: false, // 移除注释
         sourceMap: true,
-        cache: true,
+        cache: true, //是否启用文件缓存，默认缓存在node_modules/.cache/uglifyjs-webpack-plugin.目录
         uglifyOptions: {
           compress: {
             warnings: false,
@@ -79,8 +79,8 @@ const prodWebpackConfig = merge(baseWebpackConfig, {
       {
         from: path.resolve(__dirname, '../static'),
         to: config.build.staticAssetsDirectory,
-        ignore: ['.*']
-      }
+        ignore: ['.*'],
+      },
     ]),
     // css 提取
     new MiniCssExtractPlugin({
